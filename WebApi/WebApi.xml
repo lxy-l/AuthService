@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>WebApi</name>
+    </assembly>
+    <members>
+        <member name="T:WebApi.Controllers.AuthController">
+            <summary>
+            授权
+            </summary>
+        </member>
+        <member name="M:WebApi.Controllers.AuthController.JwtToken">
+            <summary>
+            获取token
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:WebApi.Controllers.AuthController.RefreshToken">
+            <summary>
+            刷新token
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:WebApi.Controllers.EnvironmentController">
+            <summary>
+            环境
+            </summary>
+        </member>
+        <member name="M:WebApi.Controllers.EnvironmentController.Get">
+            <summary>
+            获取环境
+            </summary>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
