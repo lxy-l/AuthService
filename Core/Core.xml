@@ -66,36 +66,6 @@
             token类型
             </summary>
         </member>
-        <member name="T:Core.Models.PageModel`1">
-            <summary>
-            通用分页信息类
-            </summary>
-        </member>
-        <member name="P:Core.Models.PageModel`1.page">
-            <summary>
-            当前页标
-            </summary>
-        </member>
-        <member name="P:Core.Models.PageModel`1.pageCount">
-            <summary>
-            总页数
-            </summary>
-        </member>
-        <member name="P:Core.Models.PageModel`1.dataCount">
-            <summary>
-            数据总数
-            </summary>
-        </member>
-        <member name="P:Core.Models.PageModel`1.PageSize">
-            <summary>
-            每页大小
-            </summary>
-        </member>
-        <member name="P:Core.Models.PageModel`1.data">
-            <summary>
-            返回数据
-            </summary>
-        </member>
         <member name="T:Core.Repository.IRepository`1">
             <summary>
             仓储接口
