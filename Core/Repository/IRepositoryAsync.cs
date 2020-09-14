@@ -89,7 +89,7 @@ namespace Core.Repository
         /// </summary>
         /// <param name="filter">条件</param>
         /// <returns>数量</returns>
-        Task<int> Count(Expression<Func<TEntity, bool>> filter = null);
+        Task<int> Count(Expression<Func<TEntity, bool>> filter = null); 
         /// <summary>
         /// 是否存在符合条件的数据
         /// </summary>
