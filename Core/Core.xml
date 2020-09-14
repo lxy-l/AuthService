@@ -66,62 +66,62 @@
             token类型
             </summary>
         </member>
-        <member name="T:Core.Repository.IRepository`1">
+        <member name="T:Core.Repository.IRepositoryAsync`1">
             <summary>
-            仓储接口
+            异步仓储接口
             </summary>
             <typeparam name="TEntity">实体</typeparam>
         </member>
-        <member name="M:Core.Repository.IRepository`1.Add(`0)">
+        <member name="M:Core.Repository.IRepositoryAsync`1.Add(`0)">
             <summary>
             添加
             </summary>
             <param name="entity">实体</param>
             <returns>成功则True，反之False</returns>
         </member>
-        <member name="M:Core.Repository.IRepository`1.Add(System.Collections.Generic.IEnumerable{`0})">
+        <member name="M:Core.Repository.IRepositoryAsync`1.Add(System.Collections.Generic.IEnumerable{`0})">
             <summary>
             批量添加
             </summary>
             <param name="listEntity">实体列表</param>
             <returns>受影响行数</returns>
         </member>
-        <member name="M:Core.Repository.IRepository`1.DeleteById(System.Object)">
+        <member name="M:Core.Repository.IRepositoryAsync`1.DeleteById(System.Object)">
             <summary>
             删除
             </summary>
             <param name="id">主键</param>
             <returns>成功则True，反之False</returns>
         </member>
-        <member name="M:Core.Repository.IRepository`1.Delete(`0)">
+        <member name="M:Core.Repository.IRepositoryAsync`1.Delete(`0)">
             <summary>
             删除
             </summary>
             <param name="entity">实体</param>
             <returns>成功则True，反之False</returns>
         </member>
-        <member name="M:Core.Repository.IRepository`1.Delete(System.Collections.Generic.IEnumerable{`0})">
+        <member name="M:Core.Repository.IRepositoryAsync`1.Delete(System.Collections.Generic.IEnumerable{`0})">
             <summary>
             删除
             </summary>
             <param name="listEntity">实体列表</param>
             <returns>受影响行数</returns>
         </member>
-        <member name="M:Core.Repository.IRepository`1.DeleteWhere(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+        <member name="M:Core.Repository.IRepositoryAsync`1.DeleteWhere(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
             <summary>
             删除
             </summary>
             <param name="filter">条件</param>
             <returns>受影响行数</returns>
         </member>
-        <member name="M:Core.Repository.IRepository`1.Update(`0)">
+        <member name="M:Core.Repository.IRepositoryAsync`1.Update(`0)">
             <summary>
             修改
             </summary>
             <param name="entity">实体</param>
             <returns>成功则True，反之False</returns>
         </member>
-        <member name="M:Core.Repository.IRepository`1.Update(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Linq.Expressions.Expression{System.Func{`0,`0}})">
+        <member name="M:Core.Repository.IRepositoryAsync`1.Update(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Linq.Expressions.Expression{System.Func{`0,`0}})">
             <summary>
             修改
             </summary>
@@ -129,7 +129,7 @@
             <param name="updateExpression">修改字段</param>
             <returns>受影响行数</returns>
         </member>
-        <member name="M:Core.Repository.IRepository`1.Find(System.Object,System.Boolean)">
+        <member name="M:Core.Repository.IRepositoryAsync`1.Find(System.Object,System.Boolean)">
             <summary>
             查找
             </summary>
@@ -137,20 +137,20 @@
             <param name="isAsNoTracking">是否跟踪对象</param>
             <returns>实体</returns>
         </member>
-        <member name="M:Core.Repository.IRepository`1.Get">
+        <member name="M:Core.Repository.IRepositoryAsync`1.Get">
             <summary>
             查询
             </summary>
             <returns></returns>
         </member>
-        <member name="M:Core.Repository.IRepository`1.Count(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+        <member name="M:Core.Repository.IRepositoryAsync`1.Count(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
             <summary>
             符合条件的数据条数
             </summary>
             <param name="filter">条件</param>
             <returns>数量</returns>
         </member>
-        <member name="M:Core.Repository.IRepository`1.Any(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+        <member name="M:Core.Repository.IRepositoryAsync`1.Any(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
             <summary>
             是否存在符合条件的数据
             </summary>

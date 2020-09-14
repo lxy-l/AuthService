@@ -1,19 +1,17 @@
-﻿using Core.Models;
-
+﻿
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Core.Repository
 {
     /// <summary>
-    /// 仓储接口
+    /// 异步仓储接口
     /// </summary>
     /// <typeparam name="TEntity">实体</typeparam>
-    public interface IRepository<TEntity>
+    public interface IRepositoryAsync<TEntity>
     {
         /// <summary>
         /// 添加
