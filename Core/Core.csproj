@@ -16,13 +16,17 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Service\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <None Update="Core.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="DataTransferObjects\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DataAccess\DataAccess.csproj" />
   </ItemGroup>
 
 </Project>
