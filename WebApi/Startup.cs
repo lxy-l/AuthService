@@ -88,7 +88,7 @@ namespace WebApi
                 c.OperationFilter<SecurityRequirementsOperationFilter>();
 
                 #region Token绑定到ConfigureServices
-                c.AddSecurityDefinition("OAuth2", new OpenApiSecurityScheme
+                c.AddSecurityDefinition("oauth2", new OpenApiSecurityScheme
                 {
                     Description = "JWT授权(数据将在请求头中进行传输) 直接在下框中输入Bearer {token}（注意两者之间是一个空格）\"",
                     Name = "Authorization",//jwt默认的参数名称

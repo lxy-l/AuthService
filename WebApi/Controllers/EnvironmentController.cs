@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.AspNetCore.Authorization;
+using System.Diagnostics;
 
 namespace WebApi.Controllers
 {
@@ -33,7 +34,7 @@ namespace WebApi.Controllers
         [HttpGet]
         public string Get()
         {
-            return "环境："+Env.EnvironmentName + "; Appsetting值：" + Configuration["Name"];
+            return "环境："+Env.EnvironmentName + "; Appsetting值：" + Configuration["Name"]+"; 托管进程："+ Process.GetCurrentProcess().ProcessName; ;
         }
     }
 }
