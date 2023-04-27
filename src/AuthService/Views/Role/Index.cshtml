@@ -1,0 +1,61 @@
+﻿@using Microsoft.AspNetCore.Identity;
+@model IEnumerable<IdentityRole>
+@{
+    ViewData["Title"] = "IdentityRoles";
+}
+<h1>@ViewData["Title"]</h1>
+<hr />
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<div class="table-responsive">
+    <table class="table table-hover">
+        @*    <caption>List of users</caption>*@
+        <thead class="table-light">
+            <tr>
+                <th>
+                    #
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.NormalizedName)
+                </th>
+                <th class="text-center">
+                    @Html.DisplayNameFor(model => model.ConcurrencyStamp)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                int index = 1;
+            }
+            @foreach (var item in Model)
+            {
+
+                <tr scope="row">
+                    <th scope="row"> @index </th>
+                    <td>
+                        @Html.DisplayFor(model => item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => item.NormalizedName)
+                    </td>
+                    <td class="text-center">
+                        @Html.DisplayFor(model => item.ConcurrencyStamp)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                        <a asp-action="Details" asp-route-id="@item.Id">Details</a>|
+                        <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                    </td>
+                </tr>
+
+                index++;
+            }
+        </tbody>
+    </table>
+</div>
+

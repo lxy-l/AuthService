@@ -1,0 +1,100 @@
+﻿@using IdentityServer7.EntityFramework.Storage.Entities;
+@using X.PagedList;
+@using X.PagedList.Mvc.Core;
+@using X.PagedList.Web.Common;
+@model IPagedList<Client>
+@{
+    ViewData["Title"] = "Clients";
+}
+<h1>@ViewData["Title"]</h1>
+<hr />
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<div class="table-responsive">
+    <table class="table table-hover">
+        @*    <caption>List of users</caption>*@
+        <thead class="table-light">
+            <tr>
+                <th>
+                    #
+                </th>
+                <th>
+                    ClientId
+                </th>
+                <th>
+                    ClientName
+                </th>
+                <th>
+                    Description
+                </th>
+                <th class="text-center">
+                    GrantType
+                </th>
+                <th class="text-center">
+                    Enabled
+                </th>
+                <th class="text-center">
+                    AllowOfflineAccess
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                int index = 1;
+            }
+            @foreach (var item in Model)
+            {
+
+                <tr scope="row">
+                    <th scope="row"> @index </th>
+                    <td>
+                        @Html.DisplayFor(model => item.ClientId)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => item.ClientName)
+                    </td>
+                    <td class="text-center">
+                        @Html.DisplayFor(model => item.Description)
+                    </td>
+                    <td class="text-center">
+                        @if (item.AllowedGrantTypes?.Any() ?? false)
+                        {
+                            @Html.DisplayFor(model => item.AllowedGrantTypes.FirstOrDefault().GrantType)
+                        }
+                    </td>
+                    <td class="text-center">
+                        @Html.DisplayFor(model => item.Enabled)
+                    </td>
+                    <td class="text-center">
+                        @Html.DisplayFor(model => item.AllowOfflineAccess)
+                    </td>
+
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                        <a asp-action="Details" asp-route-id="@item.Id">Details</a>|
+                        <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                    </td>
+                </tr>
+
+                index++;
+            }
+        </tbody>
+    </table>
+    <nav aria-label="Page navigation example" class="mx-auto" style="width: 25%;">
+        @Html.PagedListPager(Model, page => Url.Action("Index", new { page }),
+        new PagedListRenderOptions()
+        {
+            UlElementClasses =new List<string> { "pagination justify-content-center"},
+            LiElementClasses = new List<string>() {"page-item"},
+            PageClasses = new List<string>() {"page-link"},
+            DisplayLinkToFirstPage = PagedListDisplayMode.Always,
+            DisplayLinkToLastPage = PagedListDisplayMode.Always,
+            DisplayLinkToPreviousPage = PagedListDisplayMode.Always,
+            DisplayLinkToNextPage = PagedListDisplayMode.Always,
+            DisplayEllipsesWhenNotShowingAllPageNumbers = true,
+            MaximumPageNumbersToDisplay = 5
+        })
+    </nav>
+</div>

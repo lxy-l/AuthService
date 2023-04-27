@@ -1,0 +1,48 @@
+﻿@{
+    ViewData["Title"] = "Edit Client";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using IdentityServer7.EntityFramework.Storage.Entities;
+@model ApiResource
+<h1>Edit</h1>
+<hr />
+<p>
+    <a asp-action="Index">Back to list</a>
+</p>
+<div class="row">
+    <form id="registerForm" method="post">
+        <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
+        <div class="form-floating mb-3">
+            <input asp-for="Id" class="form-control" disabled autocomplete="Id" aria-required="true" />
+            <label asp-for="Id">Id</label>
+            <span asp-validation-for="Id" class="text-danger"></span>
+        </div>
+        <div class="form-floating mb-3">
+            <input asp-for="Name" class="form-control" autocomplete="Name" aria-required="true" />
+            <label asp-for="Name">Name</label>
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+        <div class="form-floating mb-3">
+            <input asp-for="DisplayName" class="form-control" autocomplete="DisplayName" aria-required="true" />
+            <label asp-for="DisplayName">DisplayName</label>
+            <span asp-validation-for="DisplayName" class="text-danger"></span>
+        </div>
+        <div class="form-floating mb-3">
+            <input asp-for="Scopes" class="form-control" autocomplete="Scopes" aria-required="true" />
+            <label asp-for="Scopes">Scopes</label>
+            <span asp-validation-for="Scopes" class="text-danger"></span>
+        </div>
+        <div class="form-floating mb-3">
+            <input asp-for="Enabled" class="form-control" autocomplete="Enabled" aria-required="true" />
+            <label asp-for="Enabled">Enabled</label>
+            <span asp-validation-for="Enabled" class="text-danger"></span>
+        </div>
+        <div class="form-floating mb-3">
+            <input asp-for="Description" class="form-control" autocomplete="Description" aria-required="true" />
+            <label asp-for="Description">Description</label>
+            <span asp-validation-for="Description" class="text-danger"></span>
+        </div>
+
+        <button id="registerSubmit" type="submit" class="w-100 btn btn-lg btn-primary">Save</button>
+    </form>
+</div>

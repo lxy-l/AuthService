@@ -1,0 +1,107 @@
+﻿@using Microsoft.AspNetCore.Identity;
+@using X.PagedList;
+@using X.PagedList.Mvc.Core;
+@using X.PagedList.Web.Common;
+@model IPagedList<IdentityUser>
+@{
+    ViewData["Title"] = "Account";
+}
+<h1>@ViewData["Title"]</h1>
+<hr />
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<div class="table-responsive">
+    <table class="table table-hover">
+        @*    <caption>List of users</caption>*@
+        <thead class="table-light">
+            <tr>
+                <th>
+                    #
+                </th>
+                <th>
+                    UserName
+                </th>
+                <th>
+                    Email
+                </th>
+                <th>
+                    TwoFactorEnabled
+                </th>
+
+                <th>
+                    LockoutEnabled
+                </th>
+                <th class="text-center">
+                    LockoutEnd
+                </th>
+                <th>
+                    AccessFailedCount
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                int index = 1;
+            }
+            @foreach (var item in Model)
+            {
+
+                <tr scope="row">
+                    <th scope="row"> @index </th>
+                    <td>
+                        @Html.DisplayFor(model => item.UserName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => item.Email)
+                    </td>
+                    <td class="text-center">
+                        @Html.DisplayFor(model => item.TwoFactorEnabled)
+                    </td>
+
+                    <td class="text-center">
+                        @Html.DisplayFor(model => item.LockoutEnabled)
+                    </td>
+                    <td class="text-center">
+                        @if (item.LockoutEnd.HasValue)
+                        {
+                            @Html.Raw(item.LockoutEnd.Value.LocalDateTime);
+                        }
+                        else
+                        {
+                            @Html.Raw("/");
+                        }
+
+                    </td>
+                    <td class="text-center">
+                        @Html.DisplayFor(model => item.AccessFailedCount)
+                    </td>
+
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                        <a asp-action="Details" asp-route-id="@item.Id">Details</a>|
+                        <a asp-action="Delete"  asp-route-id="@item.Id">Delete</a>
+                    </td>
+                </tr>
+
+                index++;
+            }
+        </tbody>
+    </table>
+    <nav aria-label="Page navigation example" class="mx-auto" style="width: 25%;">
+        @Html.PagedListPager(Model, page => Url.Action("Index", new { page }),
+        new PagedListRenderOptions()
+        {
+            UlElementClasses =new List<string> { "pagination justify-content-center"},
+            LiElementClasses = new List<string>() {"page-item"},
+            PageClasses = new List<string>() {"page-link"},
+            DisplayLinkToFirstPage = PagedListDisplayMode.Always,
+            DisplayLinkToLastPage = PagedListDisplayMode.Always,
+            DisplayLinkToPreviousPage = PagedListDisplayMode.Always,
+            DisplayLinkToNextPage = PagedListDisplayMode.Always,
+            DisplayEllipsesWhenNotShowingAllPageNumbers = true,
+            MaximumPageNumbersToDisplay = 5
+        })
+    </nav>
+</div>

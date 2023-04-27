@@ -1,0 +1,31 @@
+﻿@using Microsoft.AspNetCore.Identity;
+@model IdentityRole
+@{
+    ViewData["Title"] = "Details Role";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>@ViewData["Title"]</h1>
+<p>
+    <a asp-action="Index">Back to List</a>
+</p>
+<div class="row">
+    <div id="profile-form">
+        <div class="form-floating mb-3">
+            <input asp-for="Id" class="form-control"  disabled />
+            <label asp-for="Id" class="form-label"></label>
+        </div>
+        <div class="form-floating mb-3">
+            <input asp-for="Name" class="form-control" disabled />
+            <label asp-for="Name" class="form-label"></label>
+        </div>
+        <div class="form-floating mb-3">
+            <input asp-for="NormalizedName" class="form-control"disabled />
+            <label asp-for="NormalizedName" class="form-label"></label>
+        </div>
+        <div class="form-floating mb-3">
+            <input asp-for="ConcurrencyStamp" class="form-control"  disabled />
+            <label asp-for="ConcurrencyStamp" class="form-label"></label>
+        </div>
+    </div>
+</div>

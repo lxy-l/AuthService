@@ -1,0 +1,51 @@
+﻿@using IdentityServer7.EntityFramework.Storage.Entities;
+@model Client
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>@ViewData["Title"]</h1>
+<hr />
+<p>
+    <a asp-action="Index">Back to list</a>
+</p>
+<div class="row">
+    <form id="registerForm" method="post">
+        <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
+        <div class="form-floating mb-3">
+            <input asp-for="ClientId" class="form-control" disabled autocomplete="ClientId" aria-required="true" />
+            <label asp-for="ClientId">ClientId</label>
+            <span asp-validation-for="ClientId" class="text-danger"></span>
+        </div>
+        <div class="form-floating mb-3">
+            <input asp-for="ClientName" class="form-control" disabled autocomplete="ClientName" aria-required="true" />
+            <label asp-for="ClientName">ClientName</label>
+            <span asp-validation-for="ClientName" class="text-danger"></span>
+        </div>
+        <div class="form-floating mb-3">
+            <input asp-for="ClientSecrets" class="form-control" disabled autocomplete="ClientSecrets" aria-required="true" />
+            <label asp-for="ClientSecrets">ClientSecrets</label>
+            <span asp-validation-for="ClientSecrets" class="text-danger"></span>
+        </div>
+        <div class="form-floating mb-3">
+            <input asp-for="AllowedGrantTypes" class="form-control" disabled autocomplete="ClientName" aria-required="true" />
+            <label asp-for="AllowedGrantTypes">AllowedGrantTypes</label>
+            <span asp-validation-for="AllowedGrantTypes" class="text-danger"></span>
+        </div>
+        <div class="form-floating mb-3">
+            <input asp-for="AllowedScopes" class="form-control" disabled autocomplete="ClientName" aria-required="true" />
+            <label asp-for="AllowedScopes">AllowedScopes</label>
+            <span asp-validation-for="AllowedScopes" class="text-danger"></span>
+        </div>
+        <div class="form-floating mb-3">
+            <input asp-for="AllowOfflineAccess" class="form-control" disabled autocomplete="ClientName" aria-required="true" />
+            <label asp-for="AllowOfflineAccess">AllowOfflineAccess</label>
+            <span asp-validation-for="AllowOfflineAccess" class="text-danger"></span>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    @*<partial name="_ValidationScriptsPartial" />*@
+}

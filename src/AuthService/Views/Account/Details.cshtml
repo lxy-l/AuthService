@@ -1,0 +1,39 @@
+﻿@using Microsoft.AspNetCore.Identity;
+@model IdentityUser
+@{
+    ViewData["Title"] = "Details Account";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>@ViewData["Title"]</h1>
+<p>    
+<a asp-action="Index">Back to List</a>
+    </p>
+<div class="row">
+    <div id="profile-form">
+        <div class="form-floating mb-3">
+            <input asp-for="UserName" class="form-control" placeholder="Please choose your username." disabled />
+            <label asp-for="UserName" class="form-label"></label>
+        </div>
+        <div class="form-floating mb-3">
+            <input asp-for="Email" class="form-control" placeholder="Please choose your username." disabled />
+            <label asp-for="Email" class="form-label"></label>
+        </div>
+        <div class="form-floating mb-3">
+            <input asp-for="PhoneNumber" class="form-control" placeholder="Please enter your phone number." disabled />
+            <label asp-for="PhoneNumber" class="form-label"></label>
+        </div>
+        <div class="form-floating mb-3">
+            <input asp-for="LockoutEnd" class="form-control" placeholder="Please choose your username." disabled />
+            <label asp-for="LockoutEnd" class="form-label"></label>
+        </div>
+        <div class="form-floating mb-3">
+            <input asp-for="TwoFactorEnabled" class="form-control" disabled />
+            <label asp-for="TwoFactorEnabled" class="form-label"></label>
+        </div>
+        <div class="form-floating mb-3">
+            <input asp-for="AccessFailedCount" class="form-control" placeholder="Please choose your username." disabled />
+            <label asp-for="AccessFailedCount" class="form-label"></label>
+        </div>
+    </div>
+</div>
