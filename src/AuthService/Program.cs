@@ -1,6 +1,3 @@
-using System.Configuration;
-using System.Security.Cryptography.X509Certificates;
-
 using AuthService.Extensions;
 using AuthService.Seed;
 
@@ -35,8 +32,7 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.Configure<ForwardedHeadersOptions>(options =>
 {
-    options.ForwardedHeaders =
-        ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto;
+    options.ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto;
     options.KnownNetworks.Clear();
     options.KnownProxies.Clear();
 });

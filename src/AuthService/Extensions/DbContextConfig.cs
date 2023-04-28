@@ -1,7 +1,6 @@
 ﻿using AuthService.Data;
 
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Migrations.Internal;
 
 namespace WebApi.Extensions;
 

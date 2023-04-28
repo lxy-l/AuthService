@@ -1,5 +1,4 @@
-﻿using AuthService.Configuration;
-using System.Security.Cryptography.X509Certificates;
+﻿using System.Security.Cryptography.X509Certificates;
 
 using AuthService.Data;
 
@@ -8,7 +7,6 @@ using IdentityServer7.EntityFramework;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
 
 namespace AuthService.Extensions
 {
