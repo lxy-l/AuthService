@@ -19,6 +19,6 @@ public static class DbContextConfig
             sql => sql.MigrationsAssembly(migrationsAssembly))
             );
 
-        Services.AddDatabaseDeveloperPageExceptionFilter();
+        //Services.AddDatabaseDeveloperPageExceptionFilter();
     }
 }

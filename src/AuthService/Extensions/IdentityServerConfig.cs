@@ -45,8 +45,9 @@ namespace AuthService.Extensions
             //Cookies配置：https://learn.microsoft.com/zh-cn/dotnet/api/microsoft.aspnetcore.authentication.cookies.cookieauthenticationoptions?view=aspnetcore-7.0
             Services.ConfigureApplicationCookie(options =>
             {
+                //options.Cookie.Domain = "aiax.eu.org:8443";
                 options.AccessDeniedPath = "/Identity/Account/AccessDenied";
-                //options.Cookie.Name = "YourAppCookieName";
+                //options.Cookie.Name = "AuthCookies";
                 options.Cookie.HttpOnly = true;
                 options.ExpireTimeSpan = TimeSpan.FromMinutes(60);
                 options.LoginPath = "/Identity/Account/Login";
@@ -92,7 +93,7 @@ namespace AuthService.Extensions
             {
                 var certificateSettings = Configuration.GetSection("Certificate");
                 var certificate = new X509Certificate2(
-                    certificateSettings.GetValue<string>("Path"),
+                    certificateSettings.GetValue<string>("Path")?? throw new InvalidOperationException("X509 证书未配置！"),
                     certificateSettings.GetValue<string>("Password")
                     );
                 builder.AddSigningCredential(certificate);

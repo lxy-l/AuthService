@@ -44,13 +44,13 @@ app.UseForwardedHeaders();
 if (app.Environment.IsDevelopment())
 {
     app.UseMigrationsEndPoint();
-    await app.EnsureSeedData();
 }
 else
 {
     app.UseExceptionHandler("/Home/Error");
     //app.UseHsts();
 }
+await app.EnsureSeedData();
 //app.UseHttpsRedirection();
 app.UseStaticFiles();
 
