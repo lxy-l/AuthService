@@ -1,3 +1,4 @@
+using AuthService.Areas.Identity.Services;
 using AuthService.Extensions;
 using AuthService.Seed;
 
@@ -5,6 +6,8 @@ using HealthChecks.UI.Client;
 
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using Microsoft.AspNetCore.HttpOverrides;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.UI.Services;
 
 using WebApi.Extensions;
 
@@ -25,7 +28,14 @@ builder.Services.AddHealthCheckConfig(builder.Configuration);
 //IdentityServer配置
 builder.Services.AddIdentityServerConfig(builder.Configuration,builder.Environment);
 
-
+builder.Services.AddTransient<IEmailSender, EmailSender>();
+builder.Services.Configure<AuthMessageSenderOptions>(builder.Configuration);
+builder.Services.ConfigureApplicationCookie(o => {
+    o.ExpireTimeSpan = TimeSpan.FromDays(1);
+    o.SlidingExpiration = true;
+});
+builder.Services.Configure<DataProtectionTokenProviderOptions>(o =>
+       o.TokenLifespan = TimeSpan.FromHours(3));
 builder.Services.AddControllersWithViews();
 //builder.Services.AddRazorPages();
 
