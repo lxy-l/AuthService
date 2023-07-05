@@ -1,14 +1,11 @@
 ﻿using System.Security.Cryptography.X509Certificates;
-
-using AuthService.Data;
-
+using Data;
 using IdentityServer7.EntityFramework;
-
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
-namespace AuthService.Extensions
+namespace AuthService.Extension
 {
     /// <summary>
     /// 认证配置

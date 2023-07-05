@@ -1,4 +1,4 @@
-﻿namespace AuthService.Extensions;
+﻿namespace AuthService.Extension;
 
 /// <summary>
 /// 健康检测配置

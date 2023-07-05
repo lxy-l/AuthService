@@ -1,8 +1,7 @@
-﻿using AuthService.Data;
-
+﻿using Data;
 using Microsoft.EntityFrameworkCore;
 
-namespace WebApi.Extensions;
+namespace AuthService.Extension;
 
 /// <summary>
 /// 数据上下文配置

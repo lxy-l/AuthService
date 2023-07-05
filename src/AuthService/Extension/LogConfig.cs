@@ -1,4 +1,4 @@
-﻿namespace AuthService.Extensions;
+﻿namespace AuthService.Extension;
 
 /// <summary>
 /// 日志配置

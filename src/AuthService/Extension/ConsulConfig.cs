@@ -1,6 +1,6 @@
 ﻿using Consul.AspNetCore;
 
-namespace AuthService.Extensions;
+namespace AuthService.Extension;
 
 /// <summary>
 /// Consul网关配置

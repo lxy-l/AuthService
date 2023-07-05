@@ -1,5 +1,5 @@
 using AuthService.Areas.Identity.Services;
-using AuthService.Extensions;
+using AuthService.Extension;
 using AuthService.Seed;
 
 using HealthChecks.UI.Client;
@@ -8,8 +8,6 @@ using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
-
-using WebApi.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 

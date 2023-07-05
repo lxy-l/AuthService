@@ -1,6 +1,5 @@
 using AuthService.Configuration;
-using AuthService.Data;
-
+using Data;
 using IdentityServer7.EntityFramework.Storage.DbContexts;
 using IdentityServer7.EntityFramework.Storage.Mappers;
 
