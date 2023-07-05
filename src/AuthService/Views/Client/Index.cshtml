@@ -61,7 +61,7 @@
                     <td class="text-center">
                         @if (item.AllowedGrantTypes?.Any() ?? false)
                         {
-                            @Html.DisplayFor(model => item.AllowedGrantTypes.FirstOrDefault().GrantType)
+                            @Html.DisplayFor(model => item.AllowedGrantTypes.FirstOrDefault()!.GrantType)
                         }
                     </td>
                     <td class="text-center">

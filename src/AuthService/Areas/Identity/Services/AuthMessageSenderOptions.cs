@@ -1,9 +1,8 @@
-﻿namespace AuthService.Areas.Identity.Services
-{
-    public class AuthMessageSenderOptions
-    {
-        public string? SendGridKey { get; set; }
+﻿namespace AuthService.Areas.Identity.Services;
 
-        public string? Email { get; set; }
-    }
+public class AuthMessageSenderOptions
+{
+    public string? SendGridKey { get; set; }
+
+    public string? Email { get; set; }
 }

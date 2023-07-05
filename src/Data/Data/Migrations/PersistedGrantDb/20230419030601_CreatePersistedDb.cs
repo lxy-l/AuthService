@@ -3,18 +3,18 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace Data.Data.Migrations.PersistedGrantDb
+namespace Data.Data.Migrations.PersistedGrantDb;
+
+/// <inheritdoc />
+public partial class CreatePersistedDb : Migration
 {
     /// <inheritdoc />
-    public partial class CreatePersistedDb : Migration
+    protected override void Up(MigrationBuilder migrationBuilder)
     {
-        /// <inheritdoc />
-        protected override void Up(MigrationBuilder migrationBuilder)
-        {
-            migrationBuilder.AlterDatabase()
-                .Annotation("MySql:CharSet", "utf8mb4");
+        migrationBuilder.AlterDatabase()
+            .Annotation("MySql:CharSet", "utf8mb4");
 
-            migrationBuilder.CreateTable(
+        migrationBuilder.CreateTable(
                 name: "DeviceCodes",
                 columns: table => new
                 {
@@ -39,9 +39,9 @@ namespace Data.Data.Migrations.PersistedGrantDb
                 {
                     table.PrimaryKey("PK_DeviceCodes", x => x.UserCode);
                 })
-                .Annotation("MySql:CharSet", "utf8mb4");
+            .Annotation("MySql:CharSet", "utf8mb4");
 
-            migrationBuilder.CreateTable(
+        migrationBuilder.CreateTable(
                 name: "PersistedGrants",
                 columns: table => new
                 {
@@ -67,43 +67,42 @@ namespace Data.Data.Migrations.PersistedGrantDb
                 {
                     table.PrimaryKey("PK_PersistedGrants", x => x.Key);
                 })
-                .Annotation("MySql:CharSet", "utf8mb4");
+            .Annotation("MySql:CharSet", "utf8mb4");
 
-            migrationBuilder.CreateIndex(
-                name: "IX_DeviceCodes_DeviceCode",
-                table: "DeviceCodes",
-                column: "DeviceCode",
-                unique: true);
+        migrationBuilder.CreateIndex(
+            name: "IX_DeviceCodes_DeviceCode",
+            table: "DeviceCodes",
+            column: "DeviceCode",
+            unique: true);
 
-            migrationBuilder.CreateIndex(
-                name: "IX_DeviceCodes_Expiration",
-                table: "DeviceCodes",
-                column: "Expiration");
+        migrationBuilder.CreateIndex(
+            name: "IX_DeviceCodes_Expiration",
+            table: "DeviceCodes",
+            column: "Expiration");
 
-            migrationBuilder.CreateIndex(
-                name: "IX_PersistedGrants_Expiration",
-                table: "PersistedGrants",
-                column: "Expiration");
+        migrationBuilder.CreateIndex(
+            name: "IX_PersistedGrants_Expiration",
+            table: "PersistedGrants",
+            column: "Expiration");
 
-            migrationBuilder.CreateIndex(
-                name: "IX_PersistedGrants_SubjectId_ClientId_Type",
-                table: "PersistedGrants",
-                columns: new[] { "SubjectId", "ClientId", "Type" });
+        migrationBuilder.CreateIndex(
+            name: "IX_PersistedGrants_SubjectId_ClientId_Type",
+            table: "PersistedGrants",
+            columns: new[] { "SubjectId", "ClientId", "Type" });
 
-            migrationBuilder.CreateIndex(
-                name: "IX_PersistedGrants_SubjectId_SessionId_Type",
-                table: "PersistedGrants",
-                columns: new[] { "SubjectId", "SessionId", "Type" });
-        }
+        migrationBuilder.CreateIndex(
+            name: "IX_PersistedGrants_SubjectId_SessionId_Type",
+            table: "PersistedGrants",
+            columns: new[] { "SubjectId", "SessionId", "Type" });
+    }
 
-        /// <inheritdoc />
-        protected override void Down(MigrationBuilder migrationBuilder)
-        {
-            migrationBuilder.DropTable(
-                name: "DeviceCodes");
+    /// <inheritdoc />
+    protected override void Down(MigrationBuilder migrationBuilder)
+    {
+        migrationBuilder.DropTable(
+            name: "DeviceCodes");
 
-            migrationBuilder.DropTable(
-                name: "PersistedGrants");
-        }
+        migrationBuilder.DropTable(
+            name: "PersistedGrants");
     }
 }

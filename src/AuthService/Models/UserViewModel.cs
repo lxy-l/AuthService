@@ -1,8 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity;
 
-namespace AuthService.Models
+namespace AuthService.Models;
+
+public class UserViewModel:IdentityUser
 {
-    public class UserViewModel:IdentityUser
-    {
-    }
 }

@@ -1,9 +1,8 @@
-namespace AuthService.Models
-{
-    public class ErrorViewModel
-    {
-        public string? RequestId { get; set; }
+namespace AuthService.Models;
 
-        public bool ShowRequestId => !string.IsNullOrEmpty(RequestId);
-    }
+public class ErrorViewModel
+{
+    public string? RequestId { get; set; }
+
+    public bool ShowRequestId => !string.IsNullOrEmpty(RequestId);
 }
